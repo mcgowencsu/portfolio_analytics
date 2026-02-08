@@ -10,7 +10,7 @@ The notebook includes data preparation, statistical analysis, and predictive mod
 
 ## Exploratory Analysis
 
-The workflow examines relationships between independent variables and appointment no-shows to identify potential patterns prior to formal modeling.
+The workflow examines relationships between independent variables and appointment no-shows to identify potential patterns.
 
 ---
 
@@ -20,26 +20,13 @@ Data is loaded using SQLAlchemy. Database connection details are stored in an ex
 
 ---
 
-## Statistical Significance
+## Feature Evaluation
 
-Logistic regression is used to assess statistical associations between independent variables and appointment no-shows. This phase emphasizes interpretability and effect size estimation.
-
-* Wald tests are used to evaluate p-values and odds ratios
-* Odds ratios (ORs) are reported to quantify changes in the odds of no-shows associated with each variable
-
----
-
-## Predictive Modeling
-
-Gradient boosting models are used to complement logistic regression by capturing nonlinear effects and interactions.
-
-Both tree-based and linear models are trained to evaluate predictive performance.
+Both Gradient boosting and logisitic regression models are used to assess importance of factors contributing to no-shows.
 
 Models explored include:
-
-* Logistic regression
 * Gradient boosting models (LightGBM, XGBoost, CatBoost)
+* Logistic regression, including Wald Test.
 
-Model performance is assessed using ROC–AUC and precision–recall metrics. Gradient boosting models demonstrate similar discrimination performance, with LightGBM performing competitively relative to XGBoost and CatBoost.
+Model performance is assessed using ROC–AUC and precision–recall metrics. 
 
-These models are used both to evaluate predictive performance and to assess relative variable importance across modeling approaches.
